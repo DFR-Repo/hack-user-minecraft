@@ -1,0 +1,12 @@
+{
+  "name": "hackerxd212-bot",
+  "version": "1.0.0",
+  "description": "Bot for Minecraft login simulation (educational)",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "mineflayer": "^4.6.2"
+  }
+}
